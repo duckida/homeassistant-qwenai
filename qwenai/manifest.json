@@ -1,0 +1,15 @@
+{
+  "domain": "qwenai",
+  "name": "OpenAI-Compatible AI Integration",
+  "after_dependencies": ["assist_pipeline", "intent"],
+  "codeowners": ["@joostlek"],
+  "config_flow": true,
+  "dependencies": ["conversation"],
+  "documentation": "https://github.com/custom-components/qwenai",
+  "integration_type": "service",
+  "iot_class": "cloud_polling",
+  "quality_scale": "silver",
+  "requirements": ["openai>=1.93.3"],
+  "version": "1.0.0",
+  "issue_tracker": "https://github.com/custom-components/qwenai/issues"
+}

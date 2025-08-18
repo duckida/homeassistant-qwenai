@@ -1,0 +1,40 @@
+# Development dependencies for OpenAI-Compatible AI Integration
+
+# Core dependencies (same as runtime)
+openai>=1.93.3
+
+# Development tools
+black>=23.0.0          # Code formatting
+isort>=5.12.0          # Import sorting
+flake8>=6.0.0          # Linting
+mypy>=1.5.0            # Type checking
+pytest>=7.4.0          # Testing framework
+pytest-cov>=4.1.0     # Test coverage
+pytest-asyncio>=0.21.0 # Async testing support
+
+# Pre-commit hooks
+pre-commit>=3.3.0      # Git hooks for code quality
+
+# Documentation
+mkdocs>=1.5.0          # Documentation generation
+mkdocs-material>=9.1.0 # Material theme for docs
+
+# Security scanning
+bandit>=1.7.5          # Security linting
+safety>=2.3.0          # Dependency vulnerability scanning
+
+# Home Assistant development
+homeassistant>=2024.12.0  # For type checking and testing
+
+# Additional testing utilities
+responses>=0.23.0      # HTTP mocking for tests
+pytest-mock>=3.11.0   # Mocking utilities
+freezegun>=1.2.0       # Time mocking for tests
+
+# Code quality
+pylint>=2.17.0         # Additional linting
+pydocstyle>=6.3.0      # Docstring style checking
+
+# Optional: Performance profiling
+memory-profiler>=0.60.0  # Memory usage profiling
+line-profiler>=4.1.0     # Line-by-line profiling

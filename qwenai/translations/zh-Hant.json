@@ -1,0 +1,98 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "設置兼容OpenAI的AI服務",
+        "description": "為通義千問、OpenAI、Azure OpenAI或其他兼容OpenAI的服務配置API憑據。",
+        "data": {
+          "api_key": "API金鑰",
+          "base_url": "基礎URL（可選）"
+        },
+        "data_description": {
+          "api_key": "來自AI服務提供商的API金鑰（如通義千問、OpenAI、Azure OpenAI）",
+          "base_url": "自定義API端點URL（留空使用默認通義千問端點）"
+        }
+      }
+    },
+    "error": {
+      "cannot_connect": "無法連接到AI服務。請檢查您的API金鑰和網路連接。",
+      "invalid_api_key": "API金鑰格式無效或身份驗證失敗。",
+      "invalid_base_url": "基礎URL無效或不安全。請使用HTTPS URL。",
+      "rate_limit": "超出API速率限制。請稍後重試。",
+      "timeout": "連接超時。AI服務可能暫時不可用。",
+      "unknown": "發生意外錯誤。請檢查配置後重試。"
+    },
+    "abort": {
+      "already_configured": "此AI服務已配置完成。"
+    }
+  },
+  "config_subentries": {
+    "conversation": {
+      "step": {
+        "user": {
+          "title": "配置對話代理",
+          "description": "設置與Home Assistant進行語音和文本交互的對話代理。",
+          "data": {
+            "model": "AI模型",
+            "prompt": "系統提示",
+            "llm_hass_api": "Home Assistant API訪問",
+            "max_tokens": "最大令牌數",
+            "temperature": "回覆創造性"
+          },
+          "data_description": {
+            "model": "要使用的AI模型（如qwen-turbo、gpt-3.5-turbo、gpt-4）",
+            "prompt": "AI應如何行為和回應的系統指令",
+            "max_tokens": "回覆中的最大令牌數（100-4000）",
+            "temperature": "控制回覆的隨機性（0.0 = 確定性，1.0 = 創造性）"
+          }
+        }
+      },
+      "initiate_flow": {
+        "user": "添加對話代理"
+      },
+      "entry_type": "對話代理",
+      "abort": {
+        "cannot_connect": "無法連接到AI服務",
+        "unknown": "發生未知錯誤"
+      }
+    },
+    "ai_task_data": {
+      "step": {
+        "user": {
+          "title": "配置AI任務代理",
+          "description": "設置用於結構化數據生成和自動化任務的AI代理。",
+          "data": {
+            "model": "AI模型"
+          },
+          "data_description": {
+            "model": "用於結構化數據任務的AI模型"
+          }
+        }
+      },
+      "initiate_flow": {
+        "user": "添加AI任務代理"
+      },
+      "entry_type": "AI任務代理",
+      "abort": {
+        "cannot_connect": "無法連接到AI服務",
+        "unknown": "發生未知錯誤"
+      }
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "AI服務選項",
+        "description": "配置AI服務的高級選項。",
+        "data": {
+          "base_url": "基礎URL",
+          "timeout": "連接超時（秒）"
+        },
+        "data_description": {
+          "base_url": "AI服務的API端點URL",
+          "timeout": "等待API響應的最長時間"
+        }
+      }
+    }
+  }
+}

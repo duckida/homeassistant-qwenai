@@ -1,0 +1,98 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Configura servizio AI compatibile con OpenAI",
+        "description": "Configura le credenziali API per QwenAI, OpenAI, Azure OpenAI o altri servizi compatibili con OpenAI.",
+        "data": {
+          "api_key": "Chiave API",
+          "base_url": "URL base (opzionale)"
+        },
+        "data_description": {
+          "api_key": "La tua chiave API dal fornitore del servizio AI (es. QwenAI, OpenAI, Azure OpenAI)",
+          "base_url": "URL personalizzato dell'endpoint API (lascia vuoto per l'endpoint QwenAI predefinito)"
+        }
+      }
+    },
+    "error": {
+      "cannot_connect": "Impossibile connettersi al servizio AI. Verifica la chiave API e la connessione di rete.",
+      "invalid_api_key": "Il formato della chiave API non è valido o l'autenticazione è fallita.",
+      "invalid_base_url": "L'URL base non è valido o non è sicuro. Utilizza URL HTTPS.",
+      "rate_limit": "Limite di velocità API superato. Riprova più tardi.",
+      "timeout": "Timeout di connessione. Il servizio AI potrebbe essere temporaneamente non disponibile.",
+      "unknown": "Si è verificato un errore imprevisto. Verifica la configurazione e riprova."
+    },
+    "abort": {
+      "already_configured": "Questo servizio AI è già configurato."
+    }
+  },
+  "config_subentries": {
+    "conversation": {
+      "step": {
+        "user": {
+          "title": "Configura agente di conversazione",
+          "description": "Configura un agente di conversazione per interazioni vocali e testuali con Home Assistant.",
+          "data": {
+            "model": "Modello AI",
+            "prompt": "Prompt di sistema",
+            "llm_hass_api": "Accesso API Home Assistant",
+            "max_tokens": "Token massimi",
+            "temperature": "Creatività delle risposte"
+          },
+          "data_description": {
+            "model": "Il modello AI da utilizzare (es. qwen-turbo, gpt-3.5-turbo, gpt-4)",
+            "prompt": "Istruzioni di sistema su come l'AI dovrebbe comportarsi e rispondere",
+            "max_tokens": "Numero massimo di token nella risposta (100-4000)",
+            "temperature": "Controlla la casualità nelle risposte (0.0 = deterministico, 1.0 = creativo)"
+          }
+        }
+      },
+      "initiate_flow": {
+        "user": "Aggiungi agente di conversazione"
+      },
+      "entry_type": "Agente di conversazione",
+      "abort": {
+        "cannot_connect": "Impossibile connettersi al servizio AI",
+        "unknown": "Errore sconosciuto"
+      }
+    },
+    "ai_task_data": {
+      "step": {
+        "user": {
+          "title": "Configura agente attività AI",
+          "description": "Configura un agente AI per la generazione di dati strutturati e attività di automazione.",
+          "data": {
+            "model": "Modello AI"
+          },
+          "data_description": {
+            "model": "Il modello AI da utilizzare per le attività di dati strutturati"
+          }
+        }
+      },
+      "initiate_flow": {
+        "user": "Aggiungi agente attività AI"
+      },
+      "entry_type": "Agente attività AI",
+      "abort": {
+        "cannot_connect": "Impossibile connettersi al servizio AI",
+        "unknown": "Errore sconosciuto"
+      }
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "Opzioni servizio AI",
+        "description": "Configura opzioni avanzate per il tuo servizio AI.",
+        "data": {
+          "base_url": "URL base",
+          "timeout": "Timeout connessione (secondi)"
+        },
+        "data_description": {
+          "base_url": "URL dell'endpoint API per il servizio AI",
+          "timeout": "Tempo massimo di attesa per le risposte API"
+        }
+      }
+    }
+  }
+}

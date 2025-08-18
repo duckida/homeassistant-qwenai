@@ -1,0 +1,98 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Configurer le service IA compatible OpenAI",
+        "description": "Configurez vos identifiants API pour QwenAI, OpenAI, Azure OpenAI ou d'autres services compatibles OpenAI.",
+        "data": {
+          "api_key": "Clé API",
+          "base_url": "URL de base (optionnel)"
+        },
+        "data_description": {
+          "api_key": "Votre clé API du fournisseur de service IA (ex: QwenAI, OpenAI, Azure OpenAI)",
+          "base_url": "URL personnalisée de l'endpoint API (laisser vide pour l'endpoint QwenAI par défaut)"
+        }
+      }
+    },
+    "error": {
+      "cannot_connect": "Impossible de se connecter au service IA. Veuillez vérifier votre clé API et votre connexion réseau.",
+      "invalid_api_key": "Le format de la clé API est invalide ou l'authentification a échoué.",
+      "invalid_base_url": "L'URL de base est invalide ou non sécurisée. Veuillez utiliser des URL HTTPS.",
+      "rate_limit": "Limite de débit API dépassée. Veuillez réessayer plus tard.",
+      "timeout": "Délai de connexion dépassé. Le service IA peut être temporairement indisponible.",
+      "unknown": "Une erreur inattendue s'est produite. Veuillez vérifier votre configuration et réessayer."
+    },
+    "abort": {
+      "already_configured": "Ce service IA est déjà configuré."
+    }
+  },
+  "config_subentries": {
+    "conversation": {
+      "step": {
+        "user": {
+          "title": "Configurer l'agent de conversation",
+          "description": "Configurez un agent de conversation pour les interactions vocales et textuelles avec Home Assistant.",
+          "data": {
+            "model": "Modèle IA",
+            "prompt": "Invite système",
+            "llm_hass_api": "Accès API Home Assistant",
+            "max_tokens": "Tokens maximum",
+            "temperature": "Créativité des réponses"
+          },
+          "data_description": {
+            "model": "Le modèle IA à utiliser (ex: qwen-turbo, gpt-3.5-turbo, gpt-4)",
+            "prompt": "Instructions système pour le comportement et les réponses de l'IA",
+            "max_tokens": "Nombre maximum de tokens dans la réponse (100-4000)",
+            "temperature": "Contrôle l'aléatoire dans les réponses (0.0 = déterministe, 1.0 = créatif)"
+          }
+        }
+      },
+      "initiate_flow": {
+        "user": "Ajouter un agent de conversation"
+      },
+      "entry_type": "Agent de conversation",
+      "abort": {
+        "cannot_connect": "Impossible de se connecter au service IA",
+        "unknown": "Erreur inconnue"
+      }
+    },
+    "ai_task_data": {
+      "step": {
+        "user": {
+          "title": "Configurer l'agent de tâches IA",
+          "description": "Configurez un agent IA pour la génération de données structurées et les tâches d'automatisation.",
+          "data": {
+            "model": "Modèle IA"
+          },
+          "data_description": {
+            "model": "Le modèle IA à utiliser pour les tâches de données structurées"
+          }
+        }
+      },
+      "initiate_flow": {
+        "user": "Ajouter un agent de tâches IA"
+      },
+      "entry_type": "Agent de tâches IA",
+      "abort": {
+        "cannot_connect": "Impossible de se connecter au service IA",
+        "unknown": "Erreur inconnue"
+      }
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "Options du service IA",
+        "description": "Configurez les options avancées pour votre service IA.",
+        "data": {
+          "base_url": "URL de base",
+          "timeout": "Délai de connexion (secondes)"
+        },
+        "data_description": {
+          "base_url": "URL de l'endpoint API pour le service IA",
+          "timeout": "Temps maximum d'attente pour les réponses API"
+        }
+      }
+    }
+  }
+}
